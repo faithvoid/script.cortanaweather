@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+
+<settings>
+
+    <category label="Settings">
+    	<setting type="lsep" label="General" />
+        <setting id="LOC" type="text" label="City" default="" />
+        <setting id="TEMP" type="text" label="Temperature (F/C)" default="C" />
+    </category>
+
+</settings>
