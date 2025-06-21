@@ -1,0 +1,8 @@
+<addon id="script.cortanaWeather" version="1.0.0" name="cortanaWeather" provider-name="faithvoid">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>weather</provides>
+    </extension>
+</addon>
