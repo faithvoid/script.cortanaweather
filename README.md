@@ -1,6 +1,6 @@
 # script.cortanaweather
 cortanaWeather - Hourly weather notifications for XBMC4Xbox, powered by wttr.in!
-
+![](https://github.com/faithvoid/script.cortanaweather/blob/main/screenshots/notification.jpg)
 ## How to use:
 - Download the latest release .zip
 - Copy the "cortanaWeather" to "Q:/scripts"
