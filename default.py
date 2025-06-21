@@ -113,7 +113,6 @@ def download_icon(weather_code):
 
 
 def get_current_hour():
-	# Return string like "1PM", "12AM"
 	hour_with_zero = time.strftime("%I%p")
 	return hour_with_zero.lstrip("0")
 
@@ -123,7 +122,7 @@ def show_notification(hour, weather_desc, temp_c, temp_f, location):
 	else:
 		temp = "{}°C".format(temp_c)
 	xbmc.executebuiltin(
-		'Notification("cortanaWeather - {temp}", "{location} - {message}", 10000, "{icon}")'.format(
+		'Notification("cortanaWeather - {temp} - {hour}", "{location} - {message}", 10000, "{icon}")'.format(
 			hour=hour,
 			location=location,
 			message=weather_desc,
@@ -144,7 +143,11 @@ def main():
 				show_notification(current_hour, weather_desc, temp_c, temp_f, location)
 			else:
 				xbmc.log("Weather data incomplete, skipping notification", xbmc.LOGWARNING)
-		xbmc.sleep(30000)
+
+		now = time.localtime()
+		seconds_until_next_hour = (60 - now.tm_min - 1) * 60 + (60 - now.tm_sec)
+		sleep_ms = seconds_until_next_hour * 1000
+		xbmc.sleep(sleep_ms)
 
 if __name__ == "__main__":
 	main()
